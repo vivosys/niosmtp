@@ -1,3 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pmd-cpd>
+<duplication lines="18" tokens="101">
+<file line="54" path="/Users/norman/Documents/workspace/niosmtp/src/main/java/me/normanmaurer/niosmtp/delivery/callback/AuthLoginResponseCallback.java"/>
+<file line="54" path="/Users/norman/Documents/workspace/niosmtp/src/main/java/me/normanmaurer/niosmtp/delivery/callback/AuthPlainResponseCallback.java"/>
+<codefragment>
+<![CDATA[
+            if (response.getCode() == 235) {
+                String mail = ((SMTPDeliveryEnvelope)session.getAttributes().get(CURRENT_SMTP_TRANSACTION_KEY)).getSender();
+
+                
+                boolean supportsPipelining = session.getSupportedExtensions().contains(PIPELINING_EXTENSION);
+                // We use a SMTPPipelinedRequest if the SMTPServer supports
+                // PIPELINING. This will allow the NETTY to get
+                // the MAX throughput as the encoder will write it out in one
+                // buffer if possible. This result in less system calls
+                if (supportsPipelining && ((SMTPDeliveryAgentConfig)session.getConfig()).getPipeliningMode() != PipeliningMode.NO) {
+                    pipelining(session);
+                } else {
+                    next(session, SMTPRequestImpl.mail(mail));
+                }
+            } else {
+                setDeliveryStatusForAll(session, response);
+            }
+        } else {
+]]>
+</codefragment>
+</duplication>
 </pmd-cpd>

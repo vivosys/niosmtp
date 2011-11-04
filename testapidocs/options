@@ -1,0 +1,35 @@
+-classpath
+'/Users/norman/Documents/workspace/niosmtp/target/classes:/Users/norman/Documents/workspace/niosmtp/target/test-classes:/Users/norman/.m2/repository/commons-lang/commons-lang/2.4/commons-lang-2.4.jar:/Users/norman/.m2/repository/org/apache/james/protocols/protocols-api/1.6-beta3-SNAPSHOT/protocols-api-1.6-beta3-SNAPSHOT.jar:/Users/norman/.m2/repository/commons-collections/commons-collections/3.2.1/commons-collections-3.2.1.jar:/Users/norman/.m2/repository/org/jboss/netty/netty/3.2.6.Final/netty-3.2.6.Final.jar:/Users/norman/.m2/repository/org/slf4j/slf4j-api/1.6.1/slf4j-api-1.6.1.jar:/Users/norman/.m2/repository/junit/junit/4.9/junit-4.9.jar:/Users/norman/.m2/repository/org/slf4j/slf4j-simple/1.6.1/slf4j-simple-1.6.1.jar:/Users/norman/.m2/repository/org/apache/geronimo/javamail/geronimo-javamail_1.4_mail/1.6/geronimo-javamail_1.4_mail-1.6.jar:/Users/norman/.m2/repository/org/apache/james/apache-mailet/2.4/apache-mailet-2.4.jar:/Users/norman/.m2/repository/org/apache/james/protocols/protocols-lmtp/1.6-beta3-SNAPSHOT/protocols-lmtp-1.6-beta3-SNAPSHOT.jar:/Users/norman/.m2/repository/org/apache/james/protocols/protocols-impl/1.6-beta3-SNAPSHOT/protocols-impl-1.6-beta3-SNAPSHOT.jar:/Users/norman/.m2/repository/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar:/Users/norman/.m2/repository/org/apache/james/protocols/protocols-smtp/1.6-beta3-SNAPSHOT/protocols-smtp-1.6-beta3-SNAPSHOT.jar:/Users/norman/.m2/repository/org/hamcrest/hamcrest-core/1.1/hamcrest-core-1.1.jar:/Users/norman/.m2/repository/javax/activation/activation/1.1.1/activation-1.1.1.jar:/Users/norman/.m2/repository/commons-configuration/commons-configuration/1.6/commons-configuration-1.6.jar:/Users/norman/.m2/repository/org/apache/james/apache-mailet-base/1.0/apache-mailet-base-1.0.jar:/Users/norman/.m2/repository/commons-codec/commons-codec/1.5/commons-codec-1.5.jar'
+-encoding
+'MacRoman'
+-protected
+-source
+'1.6'
+-sourcepath
+'/Users/norman/Documents/workspace/niosmtp/src/test/java'
+-author
+-bottom
+'Copyright &#169; 2011. All Rights Reserved.'
+-charset
+'UTF-8'
+-d
+'/Users/norman/Documents/workspace/niosmtp/target/site/testapidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'niosmtp 0.1-SNAPSHOT Test API'
+-link
+'../apidocs'
+-link
+'http://java.sun.com/javase/6/docs/api'
+-linksource
+-tag
+"note:a:NOTE"
+-tag
+"todo:a:TODO"
+-tag
+"warning:a:WARNING"
+-use
+-version
+-windowtitle
+'niosmtp 0.1-SNAPSHOT Test API'
