@@ -50,13 +50,13 @@
 <a class="jxr_linenumber" name="40" href="#40">40</a>  <em class="jxr_javadoccomment"> */</em>
 <a class="jxr_linenumber" name="41" href="#41">41</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../../me/normanmaurer/niosmtp/transport/netty/internal/SMTPClientPipelineFactory.html">SMTPClientPipelineFactory</a> <strong class="jxr_keyword">implements</strong> ChannelPipelineFactory, <a href="../../../../../../me/normanmaurer/niosmtp/transport/netty/internal/NettyConstants.html">NettyConstants</a>{
 <a class="jxr_linenumber" name="42" href="#42">42</a>      <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">static</strong> Logger LOGGER = LoggerFactory.getLogger(SMTPClientPipelineFactory.<strong class="jxr_keyword">class</strong>);
-<a class="jxr_linenumber" name="43" href="#43">43</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">static</strong> DelimiterBasedFrameDecoder FRAMER = <strong class="jxr_keyword">new</strong> DelimiterBasedFrameDecoder(8192, <strong class="jxr_keyword">true</strong>, Delimiters.lineDelimiter());
-<a class="jxr_linenumber" name="44" href="#44">44</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">static</strong> <a href="../../../../../../me/normanmaurer/niosmtp/transport/netty/internal/SMTPResponseDecoder.html">SMTPResponseDecoder</a> SMTP_RESPONSE_DECODER = <strong class="jxr_keyword">new</strong> <a href="../../../../../../me/normanmaurer/niosmtp/transport/netty/internal/SMTPResponseDecoder.html">SMTPResponseDecoder</a>();
-<a class="jxr_linenumber" name="45" href="#45">45</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">static</strong> <a href="../../../../../../me/normanmaurer/niosmtp/transport/netty/internal/SMTPRequestEncoder.html">SMTPRequestEncoder</a> SMTP_REQUEST_ENCODER = <strong class="jxr_keyword">new</strong> <a href="../../../../../../me/normanmaurer/niosmtp/transport/netty/internal/SMTPRequestEncoder.html">SMTPRequestEncoder</a>();
+<a class="jxr_linenumber" name="43" href="#43">43</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">static</strong> <a href="../../../../../../me/normanmaurer/niosmtp/transport/netty/internal/SMTPResponseDecoder.html">SMTPResponseDecoder</a> SMTP_RESPONSE_DECODER = <strong class="jxr_keyword">new</strong> <a href="../../../../../../me/normanmaurer/niosmtp/transport/netty/internal/SMTPResponseDecoder.html">SMTPResponseDecoder</a>();
+<a class="jxr_linenumber" name="44" href="#44">44</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">static</strong> <a href="../../../../../../me/normanmaurer/niosmtp/transport/netty/internal/SMTPRequestEncoder.html">SMTPRequestEncoder</a> SMTP_REQUEST_ENCODER = <strong class="jxr_keyword">new</strong> <a href="../../../../../../me/normanmaurer/niosmtp/transport/netty/internal/SMTPRequestEncoder.html">SMTPRequestEncoder</a>();
+<a class="jxr_linenumber" name="45" href="#45">45</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">static</strong> <a href="../../../../../../me/normanmaurer/niosmtp/transport/netty/internal/SMTPPipeliningRequestEncoder.html">SMTPPipeliningRequestEncoder</a> SMTP_PIPELINING_REQUEST_ENCODER = <strong class="jxr_keyword">new</strong> <a href="../../../../../../me/normanmaurer/niosmtp/transport/netty/internal/SMTPPipeliningRequestEncoder.html">SMTPPipeliningRequestEncoder</a>();
 <a class="jxr_linenumber" name="46" href="#46">46</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">static</strong> <a href="../../../../../../me/normanmaurer/niosmtp/transport/netty/internal/SMTPClientIdleHandler.html">SMTPClientIdleHandler</a> SMTP_CLIENT_IDLE_HANDLER = <strong class="jxr_keyword">new</strong> <a href="../../../../../../me/normanmaurer/niosmtp/transport/netty/internal/SMTPClientIdleHandler.html">SMTPClientIdleHandler</a>();
-<a class="jxr_linenumber" name="47" href="#47">47</a>      <strong class="jxr_keyword">private</strong> Timer timer;
-<a class="jxr_linenumber" name="48" href="#48">48</a>      <strong class="jxr_keyword">protected</strong> <a href="../../../../../../me/normanmaurer/niosmtp/SMTPResponseCallback.html">SMTPResponseCallback</a> callback;
-<a class="jxr_linenumber" name="49" href="#49">49</a>      <strong class="jxr_keyword">protected</strong> <a href="../../../../../../me/normanmaurer/niosmtp/transport/SMTPClientConfig.html">SMTPClientConfig</a> config;
+<a class="jxr_linenumber" name="47" href="#47">47</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">final</strong> Timer timer;
+<a class="jxr_linenumber" name="48" href="#48">48</a>      <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../me/normanmaurer/niosmtp/SMTPResponseCallback.html">SMTPResponseCallback</a> callback;
+<a class="jxr_linenumber" name="49" href="#49">49</a>      <strong class="jxr_keyword">protected</strong> <strong class="jxr_keyword">final</strong> <a href="../../../../../../me/normanmaurer/niosmtp/transport/SMTPClientConfig.html">SMTPClientConfig</a> config;
 <a class="jxr_linenumber" name="50" href="#50">50</a>      
 <a class="jxr_linenumber" name="51" href="#51">51</a>      <strong class="jxr_keyword">public</strong> <a href="../../../../../../me/normanmaurer/niosmtp/transport/netty/internal/SMTPClientPipelineFactory.html">SMTPClientPipelineFactory</a>(<a href="../../../../../../me/normanmaurer/niosmtp/SMTPResponseCallback.html">SMTPResponseCallback</a> callback, <a href="../../../../../../me/normanmaurer/niosmtp/transport/SMTPClientConfig.html">SMTPClientConfig</a> config, Timer timer) {
 <a class="jxr_linenumber" name="52" href="#52">52</a>          <strong class="jxr_keyword">this</strong>.timer = timer;
@@ -69,24 +69,26 @@
 <a class="jxr_linenumber" name="59" href="#59">59</a>      <strong class="jxr_keyword">public</strong> ChannelPipeline getPipeline() <strong class="jxr_keyword">throws</strong> Exception {
 <a class="jxr_linenumber" name="60" href="#60">60</a>          ChannelPipeline pipeline = Channels.pipeline();
 <a class="jxr_linenumber" name="61" href="#61">61</a>          pipeline.addLast(SMTP_IDLE_HANDLER_KEY, SMTP_CLIENT_IDLE_HANDLER);
-<a class="jxr_linenumber" name="62" href="#62">62</a>          pipeline.addLast(FRAMER_KEY, FRAMER);
+<a class="jxr_linenumber" name="62" href="#62">62</a>          pipeline.addLast(FRAMER_KEY, <strong class="jxr_keyword">new</strong> DelimiterBasedFrameDecoder(8192, <strong class="jxr_keyword">true</strong>, Delimiters.lineDelimiter()));
 <a class="jxr_linenumber" name="63" href="#63">63</a>          pipeline.addLast(SMTP_RESPONSE_DECODER_KEY, SMTP_RESPONSE_DECODER);
 <a class="jxr_linenumber" name="64" href="#64">64</a>          pipeline.addLast(SMTP_REQUEST_ENCODER_KEY, SMTP_REQUEST_ENCODER);
-<a class="jxr_linenumber" name="65" href="#65">65</a>          pipeline.addLast(CHUNK_WRITE_HANDLER_KEY, <strong class="jxr_keyword">new</strong> ChunkedWriteHandler());
-<a class="jxr_linenumber" name="66" href="#66">66</a>          
-<a class="jxr_linenumber" name="67" href="#67">67</a>          <em class="jxr_comment">// Add the idle timeout handler</em>
-<a class="jxr_linenumber" name="68" href="#68">68</a>          pipeline.addLast(IDLE_HANDLER_KEY, <strong class="jxr_keyword">new</strong> IdleStateHandler(timer, 0, 0, config.getResponseTimeout()));
-<a class="jxr_linenumber" name="69" href="#69">69</a>          pipeline.addLast(CONNECT_HANDLER_KEY, createConnectHandler());
-<a class="jxr_linenumber" name="70" href="#70">70</a>          <strong class="jxr_keyword">return</strong> pipeline;
-<a class="jxr_linenumber" name="71" href="#71">71</a>      }
-<a class="jxr_linenumber" name="72" href="#72">72</a>      
-<a class="jxr_linenumber" name="73" href="#73">73</a>      <strong class="jxr_keyword">protected</strong> <a href="../../../../../../me/normanmaurer/niosmtp/transport/netty/internal/ConnectHandler.html">ConnectHandler</a> createConnectHandler() {
-<a class="jxr_linenumber" name="74" href="#74">74</a>          <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../../../me/normanmaurer/niosmtp/transport/netty/internal/ConnectHandler.html">ConnectHandler</a>(callback, LOGGER, config, SMTPDeliveryMode.PLAIN, <strong class="jxr_keyword">null</strong>);
-<a class="jxr_linenumber" name="75" href="#75">75</a>      }
-<a class="jxr_linenumber" name="76" href="#76">76</a>      
-<a class="jxr_linenumber" name="77" href="#77">77</a>  
-<a class="jxr_linenumber" name="78" href="#78">78</a>  
-<a class="jxr_linenumber" name="79" href="#79">79</a>  }
+<a class="jxr_linenumber" name="65" href="#65">65</a>          pipeline.addLast(SMTP_PIPELINING_REQUEST_ENCODER_KEY, SMTP_PIPELINING_REQUEST_ENCODER);
+<a class="jxr_linenumber" name="66" href="#66">66</a>  
+<a class="jxr_linenumber" name="67" href="#67">67</a>          pipeline.addLast(CHUNK_WRITE_HANDLER_KEY, <strong class="jxr_keyword">new</strong> ChunkedWriteHandler());
+<a class="jxr_linenumber" name="68" href="#68">68</a>          
+<a class="jxr_linenumber" name="69" href="#69">69</a>          <em class="jxr_comment">// Add the idle timeout handler</em>
+<a class="jxr_linenumber" name="70" href="#70">70</a>          pipeline.addLast(IDLE_HANDLER_KEY, <strong class="jxr_keyword">new</strong> IdleStateHandler(timer, 0, 0, config.getResponseTimeout()));
+<a class="jxr_linenumber" name="71" href="#71">71</a>          pipeline.addLast(CONNECT_HANDLER_KEY, createConnectHandler());
+<a class="jxr_linenumber" name="72" href="#72">72</a>          <strong class="jxr_keyword">return</strong> pipeline;
+<a class="jxr_linenumber" name="73" href="#73">73</a>      }
+<a class="jxr_linenumber" name="74" href="#74">74</a>      
+<a class="jxr_linenumber" name="75" href="#75">75</a>      <strong class="jxr_keyword">protected</strong> <a href="../../../../../../me/normanmaurer/niosmtp/transport/netty/internal/ConnectHandler.html">ConnectHandler</a> createConnectHandler() {
+<a class="jxr_linenumber" name="76" href="#76">76</a>          <strong class="jxr_keyword">return</strong> <strong class="jxr_keyword">new</strong> <a href="../../../../../../me/normanmaurer/niosmtp/transport/netty/internal/ConnectHandler.html">ConnectHandler</a>(callback, LOGGER, config, SMTPDeliveryMode.PLAIN, <strong class="jxr_keyword">null</strong>);
+<a class="jxr_linenumber" name="77" href="#77">77</a>      }
+<a class="jxr_linenumber" name="78" href="#78">78</a>      
+<a class="jxr_linenumber" name="79" href="#79">79</a>  
+<a class="jxr_linenumber" name="80" href="#80">80</a>  
+<a class="jxr_linenumber" name="81" href="#81">81</a>  }
 </pre>
 <hr/><div id="footer">This page was automatically generated by <a href="http://maven.apache.org/">Maven</a></div></body>
 </html>

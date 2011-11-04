@@ -43,13 +43,13 @@
 <FONT color="green">040</FONT>     */<a name="line.40"></a>
 <FONT color="green">041</FONT>    public class SMTPClientPipelineFactory implements ChannelPipelineFactory, NettyConstants{<a name="line.41"></a>
 <FONT color="green">042</FONT>        protected final static Logger LOGGER = LoggerFactory.getLogger(SMTPClientPipelineFactory.class);<a name="line.42"></a>
-<FONT color="green">043</FONT>        private final static DelimiterBasedFrameDecoder FRAMER = new DelimiterBasedFrameDecoder(8192, true, Delimiters.lineDelimiter());<a name="line.43"></a>
-<FONT color="green">044</FONT>        private final static SMTPResponseDecoder SMTP_RESPONSE_DECODER = new SMTPResponseDecoder();<a name="line.44"></a>
-<FONT color="green">045</FONT>        private final static SMTPRequestEncoder SMTP_REQUEST_ENCODER = new SMTPRequestEncoder();<a name="line.45"></a>
+<FONT color="green">043</FONT>        private final static SMTPResponseDecoder SMTP_RESPONSE_DECODER = new SMTPResponseDecoder();<a name="line.43"></a>
+<FONT color="green">044</FONT>        private final static SMTPRequestEncoder SMTP_REQUEST_ENCODER = new SMTPRequestEncoder();<a name="line.44"></a>
+<FONT color="green">045</FONT>        private final static SMTPPipeliningRequestEncoder SMTP_PIPELINING_REQUEST_ENCODER = new SMTPPipeliningRequestEncoder();<a name="line.45"></a>
 <FONT color="green">046</FONT>        private final static SMTPClientIdleHandler SMTP_CLIENT_IDLE_HANDLER = new SMTPClientIdleHandler();<a name="line.46"></a>
-<FONT color="green">047</FONT>        private Timer timer;<a name="line.47"></a>
-<FONT color="green">048</FONT>        protected SMTPResponseCallback callback;<a name="line.48"></a>
-<FONT color="green">049</FONT>        protected SMTPClientConfig config;<a name="line.49"></a>
+<FONT color="green">047</FONT>        private final Timer timer;<a name="line.47"></a>
+<FONT color="green">048</FONT>        protected final SMTPResponseCallback callback;<a name="line.48"></a>
+<FONT color="green">049</FONT>        protected final SMTPClientConfig config;<a name="line.49"></a>
 <FONT color="green">050</FONT>        <a name="line.50"></a>
 <FONT color="green">051</FONT>        public SMTPClientPipelineFactory(SMTPResponseCallback callback, SMTPClientConfig config, Timer timer) {<a name="line.51"></a>
 <FONT color="green">052</FONT>            this.timer = timer;<a name="line.52"></a>
@@ -62,24 +62,26 @@
 <FONT color="green">059</FONT>        public ChannelPipeline getPipeline() throws Exception {<a name="line.59"></a>
 <FONT color="green">060</FONT>            ChannelPipeline pipeline = Channels.pipeline();<a name="line.60"></a>
 <FONT color="green">061</FONT>            pipeline.addLast(SMTP_IDLE_HANDLER_KEY, SMTP_CLIENT_IDLE_HANDLER);<a name="line.61"></a>
-<FONT color="green">062</FONT>            pipeline.addLast(FRAMER_KEY, FRAMER);<a name="line.62"></a>
+<FONT color="green">062</FONT>            pipeline.addLast(FRAMER_KEY, new DelimiterBasedFrameDecoder(8192, true, Delimiters.lineDelimiter()));<a name="line.62"></a>
 <FONT color="green">063</FONT>            pipeline.addLast(SMTP_RESPONSE_DECODER_KEY, SMTP_RESPONSE_DECODER);<a name="line.63"></a>
 <FONT color="green">064</FONT>            pipeline.addLast(SMTP_REQUEST_ENCODER_KEY, SMTP_REQUEST_ENCODER);<a name="line.64"></a>
-<FONT color="green">065</FONT>            pipeline.addLast(CHUNK_WRITE_HANDLER_KEY, new ChunkedWriteHandler());<a name="line.65"></a>
-<FONT color="green">066</FONT>            <a name="line.66"></a>
-<FONT color="green">067</FONT>            // Add the idle timeout handler<a name="line.67"></a>
-<FONT color="green">068</FONT>            pipeline.addLast(IDLE_HANDLER_KEY, new IdleStateHandler(timer, 0, 0, config.getResponseTimeout()));<a name="line.68"></a>
-<FONT color="green">069</FONT>            pipeline.addLast(CONNECT_HANDLER_KEY, createConnectHandler());<a name="line.69"></a>
-<FONT color="green">070</FONT>            return pipeline;<a name="line.70"></a>
-<FONT color="green">071</FONT>        }<a name="line.71"></a>
-<FONT color="green">072</FONT>        <a name="line.72"></a>
-<FONT color="green">073</FONT>        protected ConnectHandler createConnectHandler() {<a name="line.73"></a>
-<FONT color="green">074</FONT>            return new ConnectHandler(callback, LOGGER, config, SMTPDeliveryMode.PLAIN, null);<a name="line.74"></a>
-<FONT color="green">075</FONT>        }<a name="line.75"></a>
-<FONT color="green">076</FONT>        <a name="line.76"></a>
-<FONT color="green">077</FONT>    <a name="line.77"></a>
-<FONT color="green">078</FONT>    <a name="line.78"></a>
-<FONT color="green">079</FONT>    }<a name="line.79"></a>
+<FONT color="green">065</FONT>            pipeline.addLast(SMTP_PIPELINING_REQUEST_ENCODER_KEY, SMTP_PIPELINING_REQUEST_ENCODER);<a name="line.65"></a>
+<FONT color="green">066</FONT>    <a name="line.66"></a>
+<FONT color="green">067</FONT>            pipeline.addLast(CHUNK_WRITE_HANDLER_KEY, new ChunkedWriteHandler());<a name="line.67"></a>
+<FONT color="green">068</FONT>            <a name="line.68"></a>
+<FONT color="green">069</FONT>            // Add the idle timeout handler<a name="line.69"></a>
+<FONT color="green">070</FONT>            pipeline.addLast(IDLE_HANDLER_KEY, new IdleStateHandler(timer, 0, 0, config.getResponseTimeout()));<a name="line.70"></a>
+<FONT color="green">071</FONT>            pipeline.addLast(CONNECT_HANDLER_KEY, createConnectHandler());<a name="line.71"></a>
+<FONT color="green">072</FONT>            return pipeline;<a name="line.72"></a>
+<FONT color="green">073</FONT>        }<a name="line.73"></a>
+<FONT color="green">074</FONT>        <a name="line.74"></a>
+<FONT color="green">075</FONT>        protected ConnectHandler createConnectHandler() {<a name="line.75"></a>
+<FONT color="green">076</FONT>            return new ConnectHandler(callback, LOGGER, config, SMTPDeliveryMode.PLAIN, null);<a name="line.76"></a>
+<FONT color="green">077</FONT>        }<a name="line.77"></a>
+<FONT color="green">078</FONT>        <a name="line.78"></a>
+<FONT color="green">079</FONT>    <a name="line.79"></a>
+<FONT color="green">080</FONT>    <a name="line.80"></a>
+<FONT color="green">081</FONT>    }<a name="line.81"></a>
 
 
 

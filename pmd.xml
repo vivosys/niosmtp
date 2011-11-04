@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pmd version="4.2.5" timestamp="2011-11-04T20:45:30.517">
+<pmd version="4.2.5" timestamp="2011-11-04T21:57:46.901">
+<file name="/Users/norman/Documents/workspace/niosmtp/src/main/java/me/normanmaurer/niosmtp/SMTPPipeliningRequest.java">
+<violation beginline="31" endline="31" begincolumn="25" endcolumn="59" rule="UnusedModifier" ruleset="Controversial Rules" package="me.normanmaurer.niosmtp" class="SMTPPipeliningRequest" variable="REQUESTS_SEPERATOR" externalInfoUrl="http://pmd.sourceforge.net/rules/controversial.html#UnusedModifier" priority="3">
+Avoid modifiers which are implied by the context
+</violation>
+</file>
 <file name="/Users/norman/Documents/workspace/niosmtp/src/main/java/me/normanmaurer/niosmtp/SMTPRequest.java">
 <violation beginline="27" endline="27" begincolumn="25" endcolumn="61" rule="UnusedModifier" ruleset="Controversial Rules" package="me.normanmaurer.niosmtp" class="SMTPRequest" variable="STARTTLS_COMMAND" externalInfoUrl="http://pmd.sourceforge.net/rules/controversial.html#UnusedModifier" priority="3">
 Avoid modifiers which are implied by the context
@@ -28,18 +33,18 @@ Avoid modifiers which are implied by the context
 <violation beginline="35" endline="35" begincolumn="25" endcolumn="53" rule="UnusedModifier" ruleset="Controversial Rules" package="me.normanmaurer.niosmtp" class="SMTPRequest" variable="QUIT_COMMAND" externalInfoUrl="http://pmd.sourceforge.net/rules/controversial.html#UnusedModifier" priority="3">
 Avoid modifiers which are implied by the context
 </violation>
-<violation beginline="37" endline="37" begincolumn="25" endcolumn="45" rule="UnusedModifier" ruleset="Controversial Rules" package="me.normanmaurer.niosmtp" class="SMTPRequest" variable="SEPERATOR" externalInfoUrl="http://pmd.sourceforge.net/rules/controversial.html#UnusedModifier" priority="3">
+<violation beginline="40" endline="40" begincolumn="25" endcolumn="45" rule="UnusedModifier" ruleset="Controversial Rules" package="me.normanmaurer.niosmtp" class="SMTPRequest" variable="SEPERATOR" externalInfoUrl="http://pmd.sourceforge.net/rules/controversial.html#UnusedModifier" priority="3">
 Avoid modifiers which are implied by the context
 </violation>
 </file>
 <file name="/Users/norman/Documents/workspace/niosmtp/src/main/java/me/normanmaurer/niosmtp/SMTPResponse.java">
-<violation beginline="29" endline="29" begincolumn="25" endcolumn="50" rule="UnusedModifier" ruleset="Controversial Rules" package="me.normanmaurer.niosmtp" class="SMTPResponse" variable="LAST_SEPERATOR" externalInfoUrl="http://pmd.sourceforge.net/rules/controversial.html#UnusedModifier" priority="3">
+<violation beginline="32" endline="32" begincolumn="25" endcolumn="50" rule="UnusedModifier" ruleset="Controversial Rules" package="me.normanmaurer.niosmtp" class="SMTPResponse" variable="LAST_SEPERATOR" externalInfoUrl="http://pmd.sourceforge.net/rules/controversial.html#UnusedModifier" priority="3">
 Avoid modifiers which are implied by the context
 </violation>
-<violation beginline="31" endline="31" begincolumn="25" endcolumn="45" rule="UnusedModifier" ruleset="Controversial Rules" package="me.normanmaurer.niosmtp" class="SMTPResponse" variable="SEPERATOR" externalInfoUrl="http://pmd.sourceforge.net/rules/controversial.html#UnusedModifier" priority="3">
+<violation beginline="38" endline="38" begincolumn="25" endcolumn="45" rule="UnusedModifier" ruleset="Controversial Rules" package="me.normanmaurer.niosmtp" class="SMTPResponse" variable="SEPERATOR" externalInfoUrl="http://pmd.sourceforge.net/rules/controversial.html#UnusedModifier" priority="3">
 Avoid modifiers which are implied by the context
 </violation>
-<violation beginline="33" endline="33" begincolumn="25" endcolumn="56" rule="UnusedModifier" ruleset="Controversial Rules" package="me.normanmaurer.niosmtp" class="SMTPResponse" variable="LINES_SEPERATOR" externalInfoUrl="http://pmd.sourceforge.net/rules/controversial.html#UnusedModifier" priority="3">
+<violation beginline="43" endline="43" begincolumn="25" endcolumn="56" rule="UnusedModifier" ruleset="Controversial Rules" package="me.normanmaurer.niosmtp" class="SMTPResponse" variable="LINES_SEPERATOR" externalInfoUrl="http://pmd.sourceforge.net/rules/controversial.html#UnusedModifier" priority="3">
 Avoid modifiers which are implied by the context
 </violation>
 </file>
@@ -55,19 +60,19 @@ Use explicit scoping instead of the default package private level
 <violation beginline="50" endline="54" begincolumn="12" endcolumn="5" rule="CallSuperInConstructor" ruleset="Controversial Rules" package="me.normanmaurer.niosmtp.core" class="DataTerminatingInputStream" externalInfoUrl="http://pmd.sourceforge.net/rules/controversial.html#CallSuperInConstructor" priority="3">
 It is a good practice to call super() in a constructor
 </violation>
-<violation beginline="68" endline="68" begincolumn="17" endcolumn="27" rule="OnlyOneReturn" ruleset="Controversial Rules" package="me.normanmaurer.niosmtp.core" class="DataTerminatingInputStream" method="read" externalInfoUrl="http://pmd.sourceforge.net/rules/controversial.html#OnlyOneReturn" priority="3">
+<violation beginline="67" endline="67" begincolumn="17" endcolumn="27" rule="OnlyOneReturn" ruleset="Controversial Rules" package="me.normanmaurer.niosmtp.core" class="DataTerminatingInputStream" method="read" externalInfoUrl="http://pmd.sourceforge.net/rules/controversial.html#OnlyOneReturn" priority="3">
 A method should have only one exit point, and that should be the last statement in the method
 </violation>
-<violation beginline="81" endline="81" begincolumn="17" endcolumn="34" rule="OnlyOneReturn" ruleset="Controversial Rules" package="me.normanmaurer.niosmtp.core" class="DataTerminatingInputStream" method="read" externalInfoUrl="http://pmd.sourceforge.net/rules/controversial.html#OnlyOneReturn" priority="3">
+<violation beginline="80" endline="80" begincolumn="17" endcolumn="34" rule="OnlyOneReturn" ruleset="Controversial Rules" package="me.normanmaurer.niosmtp.core" class="DataTerminatingInputStream" method="read" externalInfoUrl="http://pmd.sourceforge.net/rules/controversial.html#OnlyOneReturn" priority="3">
 A method should have only one exit point, and that should be the last statement in the method
 </violation>
-<violation beginline="85" endline="85" begincolumn="13" endcolumn="21" rule="OnlyOneReturn" ruleset="Controversial Rules" package="me.normanmaurer.niosmtp.core" class="DataTerminatingInputStream" method="read" externalInfoUrl="http://pmd.sourceforge.net/rules/controversial.html#OnlyOneReturn" priority="3">
+<violation beginline="84" endline="84" begincolumn="13" endcolumn="21" rule="OnlyOneReturn" ruleset="Controversial Rules" package="me.normanmaurer.niosmtp.core" class="DataTerminatingInputStream" method="read" externalInfoUrl="http://pmd.sourceforge.net/rules/controversial.html#OnlyOneReturn" priority="3">
 A method should have only one exit point, and that should be the last statement in the method
 </violation>
-<violation beginline="107" endline="107" begincolumn="13" endcolumn="22" rule="OnlyOneReturn" ruleset="Controversial Rules" package="me.normanmaurer.niosmtp.core" class="DataTerminatingInputStream" method="readNext" externalInfoUrl="http://pmd.sourceforge.net/rules/controversial.html#OnlyOneReturn" priority="3">
+<violation beginline="106" endline="106" begincolumn="13" endcolumn="22" rule="OnlyOneReturn" ruleset="Controversial Rules" package="me.normanmaurer.niosmtp.core" class="DataTerminatingInputStream" method="readNext" externalInfoUrl="http://pmd.sourceforge.net/rules/controversial.html#OnlyOneReturn" priority="3">
 A method should have only one exit point, and that should be the last statement in the method
 </violation>
-<violation beginline="118" endline="118" begincolumn="13" endcolumn="42" rule="OnlyOneReturn" ruleset="Controversial Rules" package="me.normanmaurer.niosmtp.core" class="DataTerminatingInputStream" method="available" externalInfoUrl="http://pmd.sourceforge.net/rules/controversial.html#OnlyOneReturn" priority="3">
+<violation beginline="117" endline="117" begincolumn="13" endcolumn="42" rule="OnlyOneReturn" ruleset="Controversial Rules" package="me.normanmaurer.niosmtp.core" class="DataTerminatingInputStream" method="available" externalInfoUrl="http://pmd.sourceforge.net/rules/controversial.html#OnlyOneReturn" priority="3">
 A method should have only one exit point, and that should be the last statement in the method
 </violation>
 </file>
@@ -79,11 +84,19 @@ It is a good practice to call super() in a constructor
 It is a good practice to call super() in a constructor
 </violation>
 </file>
+<file name="/Users/norman/Documents/workspace/niosmtp/src/main/java/me/normanmaurer/niosmtp/core/SMTPPipelingingResponseCallback.java">
+<violation beginline="47" endline="49" begincolumn="17" endcolumn="43" rule="DataflowAnomalyAnalysis" ruleset="Controversial Rules" package="me.normanmaurer.niosmtp.core" class="SMTPPipelingingResponseCallback" method="onResponse" variable="callback" externalInfoUrl="http://pmd.sourceforge.net/rules/controversial.html#DataflowAnomalyAnalysis" priority="5">
+Found 'DD'-anomaly for variable 'callback' (lines '47'-'49').
+</violation>
+<violation beginline="65" endline="67" begincolumn="13" endcolumn="13" rule="CollapsibleIfStatements" ruleset="Basic Rules" package="me.normanmaurer.niosmtp.core" class="SMTPPipelingingResponseCallback" method="onException" externalInfoUrl="http://pmd.sourceforge.net/rules/basic.html#CollapsibleIfStatements" priority="3">
+These nested if statements could be combined
+</violation>
+</file>
 <file name="/Users/norman/Documents/workspace/niosmtp/src/main/java/me/normanmaurer/niosmtp/core/StringUtils.java">
-<violation beginline="59" endline="59" begincolumn="13" endcolumn="33" rule="OnlyOneReturn" ruleset="Controversial Rules" package="me.normanmaurer.niosmtp.core" class="StringUtils" method="toString" externalInfoUrl="http://pmd.sourceforge.net/rules/controversial.html#OnlyOneReturn" priority="3">
+<violation beginline="60" endline="60" begincolumn="13" endcolumn="33" rule="OnlyOneReturn" ruleset="Controversial Rules" package="me.normanmaurer.niosmtp.core" class="StringUtils" method="toString" externalInfoUrl="http://pmd.sourceforge.net/rules/controversial.html#OnlyOneReturn" priority="3">
 A method should have only one exit point, and that should be the last statement in the method
 </violation>
-<violation beginline="74" endline="74" begincolumn="13" endcolumn="27" rule="OnlyOneReturn" ruleset="Controversial Rules" package="me.normanmaurer.niosmtp.core" class="StringUtils" method="toString" externalInfoUrl="http://pmd.sourceforge.net/rules/controversial.html#OnlyOneReturn" priority="3">
+<violation beginline="75" endline="75" begincolumn="13" endcolumn="27" rule="OnlyOneReturn" ruleset="Controversial Rules" package="me.normanmaurer.niosmtp.core" class="StringUtils" method="toString" externalInfoUrl="http://pmd.sourceforge.net/rules/controversial.html#OnlyOneReturn" priority="3">
 A method should have only one exit point, and that should be the last statement in the method
 </violation>
 </file>
@@ -122,14 +135,17 @@ A method should have only one exit point, and that should be the last statement 
 </violation>
 </file>
 <file name="/Users/norman/Documents/workspace/niosmtp/src/main/java/me/normanmaurer/niosmtp/delivery/callback/AbstractResponseCallback.java">
-<violation beginline="69" endline="71" begincolumn="11" endcolumn="9" rule="EmptyCatchBlock" ruleset="Basic Rules" package="me.normanmaurer.niosmtp.delivery.callback" class="AbstractResponseCallback" method="onException" externalInfoUrl="http://pmd.sourceforge.net/rules/basic.html#EmptyCatchBlock" priority="3">
+<violation beginline="72" endline="74" begincolumn="11" endcolumn="9" rule="EmptyCatchBlock" ruleset="Basic Rules" package="me.normanmaurer.niosmtp.delivery.callback" class="AbstractResponseCallback" method="onException" externalInfoUrl="http://pmd.sourceforge.net/rules/basic.html#EmptyCatchBlock" priority="3">
 Avoid empty catch blocks
 </violation>
-<violation beginline="79" endline="86" begincolumn="39" endcolumn="131" rule="DataflowAnomalyAnalysis" ruleset="Controversial Rules" package="me.normanmaurer.niosmtp.delivery.callback" class="AbstractResponseCallback" method="setDeliveryStatusForAll" variable="statusList" externalInfoUrl="http://pmd.sourceforge.net/rules/controversial.html#DataflowAnomalyAnalysis" priority="5">
-Found 'DU'-anomaly for variable 'statusList' (lines '79'-'86').
+<violation beginline="82" endline="89" begincolumn="39" endcolumn="131" rule="DataflowAnomalyAnalysis" ruleset="Controversial Rules" package="me.normanmaurer.niosmtp.delivery.callback" class="AbstractResponseCallback" method="setDeliveryStatusForAll" variable="statusList" externalInfoUrl="http://pmd.sourceforge.net/rules/controversial.html#DataflowAnomalyAnalysis" priority="5">
+Found 'DU'-anomaly for variable 'statusList' (lines '82'-'89').
 </violation>
-<violation beginline="136" endline="161" begincolumn="32" endcolumn="104" rule="DataflowAnomalyAnalysis" ruleset="Controversial Rules" package="me.normanmaurer.niosmtp.delivery.callback" class="AbstractResponseCallback" method="setDeliveryStatus" variable="future" externalInfoUrl="http://pmd.sourceforge.net/rules/controversial.html#DataflowAnomalyAnalysis" priority="5">
-Found 'DU'-anomaly for variable 'future' (lines '136'-'161').
+<violation beginline="137" endline="162" begincolumn="32" endcolumn="104" rule="DataflowAnomalyAnalysis" ruleset="Controversial Rules" package="me.normanmaurer.niosmtp.delivery.callback" class="AbstractResponseCallback" method="setDeliveryStatus" variable="future" externalInfoUrl="http://pmd.sourceforge.net/rules/controversial.html#DataflowAnomalyAnalysis" priority="5">
+Found 'DU'-anomaly for variable 'future' (lines '137'-'162').
+</violation>
+<violation beginline="165" endline="172" begincolumn="37" endcolumn="135" rule="DataflowAnomalyAnalysis" ruleset="Controversial Rules" package="me.normanmaurer.niosmtp.delivery.callback" class="AbstractResponseCallback" method="next" variable="factory" externalInfoUrl="http://pmd.sourceforge.net/rules/controversial.html#DataflowAnomalyAnalysis" priority="5">
+Found 'DU'-anomaly for variable 'factory' (lines '165'-'172').
 </violation>
 </file>
 <file name="/Users/norman/Documents/workspace/niosmtp/src/main/java/me/normanmaurer/niosmtp/delivery/callback/AuthLoginResponseCallback.java">
@@ -284,10 +300,10 @@ It is a good practice to call super() in a constructor
 </violation>
 </file>
 <file name="/Users/norman/Documents/workspace/niosmtp/src/main/java/me/normanmaurer/niosmtp/delivery/impl/DeliveryRecipientStatusImpl.java">
-<violation beginline="60" endline="60" begincolumn="13" endcolumn="37" rule="OnlyOneReturn" ruleset="Controversial Rules" package="me.normanmaurer.niosmtp.delivery.impl" class="DeliveryRecipientStatusImpl" method="getStatus" externalInfoUrl="http://pmd.sourceforge.net/rules/controversial.html#OnlyOneReturn" priority="3">
+<violation beginline="65" endline="65" begincolumn="13" endcolumn="37" rule="OnlyOneReturn" ruleset="Controversial Rules" package="me.normanmaurer.niosmtp.delivery.impl" class="DeliveryRecipientStatusImpl" method="getStatus" externalInfoUrl="http://pmd.sourceforge.net/rules/controversial.html#OnlyOneReturn" priority="3">
 A method should have only one exit point, and that should be the last statement in the method
 </violation>
-<violation beginline="62" endline="62" begincolumn="13" endcolumn="49" rule="OnlyOneReturn" ruleset="Controversial Rules" package="me.normanmaurer.niosmtp.delivery.impl" class="DeliveryRecipientStatusImpl" method="getStatus" externalInfoUrl="http://pmd.sourceforge.net/rules/controversial.html#OnlyOneReturn" priority="3">
+<violation beginline="67" endline="67" begincolumn="13" endcolumn="49" rule="OnlyOneReturn" ruleset="Controversial Rules" package="me.normanmaurer.niosmtp.delivery.impl" class="DeliveryRecipientStatusImpl" method="getStatus" externalInfoUrl="http://pmd.sourceforge.net/rules/controversial.html#OnlyOneReturn" priority="3">
 A method should have only one exit point, and that should be the last statement in the method
 </violation>
 </file>
@@ -348,7 +364,7 @@ Avoid modifiers which are implied by the context
 </violation>
 </file>
 <file name="/Users/norman/Documents/workspace/niosmtp/src/main/java/me/normanmaurer/niosmtp/transport/SMTPClientSession.java">
-<violation beginline="179" endline="187" begincolumn="12" endcolumn="5" rule="UnusedModifier" ruleset="Controversial Rules" package="me.normanmaurer.niosmtp.transport" class="SMTPClientSession" externalInfoUrl="http://pmd.sourceforge.net/rules/controversial.html#UnusedModifier" priority="3">
+<violation beginline="192" endline="200" begincolumn="12" endcolumn="5" rule="UnusedModifier" ruleset="Controversial Rules" package="me.normanmaurer.niosmtp.transport" class="SMTPClientSession" externalInfoUrl="http://pmd.sourceforge.net/rules/controversial.html#UnusedModifier" priority="3">
 Avoid modifiers which are implied by the context
 </violation>
 </file>
@@ -430,40 +446,48 @@ Avoid modifiers which are implied by the context
 <violation beginline="58" endline="58" begincolumn="25" endcolumn="78" rule="UnusedModifier" ruleset="Controversial Rules" package="me.normanmaurer.niosmtp.transport.netty.internal" class="NettyConstants" variable="SMTP_REQUEST_ENCODER_KEY" externalInfoUrl="http://pmd.sourceforge.net/rules/controversial.html#UnusedModifier" priority="3">
 Avoid modifiers which are implied by the context
 </violation>
-<violation beginline="63" endline="63" begincolumn="25" endcolumn="76" rule="UnusedModifier" ruleset="Controversial Rules" package="me.normanmaurer.niosmtp.transport.netty.internal" class="NettyConstants" variable="CHUNK_WRITE_HANDLER_KEY" externalInfoUrl="http://pmd.sourceforge.net/rules/controversial.html#UnusedModifier" priority="3">
+<violation beginline="63" endline="63" begincolumn="25" endcolumn="99" rule="UnusedModifier" ruleset="Controversial Rules" package="me.normanmaurer.niosmtp.transport.netty.internal" class="NettyConstants" variable="SMTP_PIPELINING_REQUEST_ENCODER_KEY" externalInfoUrl="http://pmd.sourceforge.net/rules/controversial.html#UnusedModifier" priority="3">
 Avoid modifiers which are implied by the context
 </violation>
-<violation beginline="68" endline="68" begincolumn="25" endcolumn="80" rule="UnusedModifier" ruleset="Controversial Rules" package="me.normanmaurer.niosmtp.transport.netty.internal" class="NettyConstants" variable="MESSAGE_INPUT_ENCODER_KEY" externalInfoUrl="http://pmd.sourceforge.net/rules/controversial.html#UnusedModifier" priority="3">
+<violation beginline="69" endline="69" begincolumn="25" endcolumn="76" rule="UnusedModifier" ruleset="Controversial Rules" package="me.normanmaurer.niosmtp.transport.netty.internal" class="NettyConstants" variable="CHUNK_WRITE_HANDLER_KEY" externalInfoUrl="http://pmd.sourceforge.net/rules/controversial.html#UnusedModifier" priority="3">
 Avoid modifiers which are implied by the context
 </violation>
-<violation beginline="73" endline="73" begincolumn="25" endcolumn="62" rule="UnusedModifier" ruleset="Controversial Rules" package="me.normanmaurer.niosmtp.transport.netty.internal" class="NettyConstants" variable="SSL_HANDLER_KEY" externalInfoUrl="http://pmd.sourceforge.net/rules/controversial.html#UnusedModifier" priority="3">
+<violation beginline="74" endline="74" begincolumn="25" endcolumn="80" rule="UnusedModifier" ruleset="Controversial Rules" package="me.normanmaurer.niosmtp.transport.netty.internal" class="NettyConstants" variable="MESSAGE_INPUT_ENCODER_KEY" externalInfoUrl="http://pmd.sourceforge.net/rules/controversial.html#UnusedModifier" priority="3">
 Avoid modifiers which are implied by the context
 </violation>
-<violation beginline="78" endline="78" begincolumn="25" endcolumn="81" rule="UnusedModifier" ruleset="Controversial Rules" package="me.normanmaurer.niosmtp.transport.netty.internal" class="NettyConstants" variable="SSL_HANDSHAKE_HANDLER_KEY" externalInfoUrl="http://pmd.sourceforge.net/rules/controversial.html#UnusedModifier" priority="3">
+<violation beginline="79" endline="79" begincolumn="25" endcolumn="62" rule="UnusedModifier" ruleset="Controversial Rules" package="me.normanmaurer.niosmtp.transport.netty.internal" class="NettyConstants" variable="SSL_HANDLER_KEY" externalInfoUrl="http://pmd.sourceforge.net/rules/controversial.html#UnusedModifier" priority="3">
 Avoid modifiers which are implied by the context
 </violation>
-<violation beginline="84" endline="84" begincolumn="25" endcolumn="73" rule="UnusedModifier" ruleset="Controversial Rules" package="me.normanmaurer.niosmtp.transport.netty.internal" class="NettyConstants" variable="SMTP_IDLE_HANDLER_KEY" externalInfoUrl="http://pmd.sourceforge.net/rules/controversial.html#UnusedModifier" priority="3">
+<violation beginline="84" endline="84" begincolumn="25" endcolumn="81" rule="UnusedModifier" ruleset="Controversial Rules" package="me.normanmaurer.niosmtp.transport.netty.internal" class="NettyConstants" variable="SSL_HANDSHAKE_HANDLER_KEY" externalInfoUrl="http://pmd.sourceforge.net/rules/controversial.html#UnusedModifier" priority="3">
+Avoid modifiers which are implied by the context
+</violation>
+<violation beginline="90" endline="90" begincolumn="25" endcolumn="73" rule="UnusedModifier" ruleset="Controversial Rules" package="me.normanmaurer.niosmtp.transport.netty.internal" class="NettyConstants" variable="SMTP_IDLE_HANDLER_KEY" externalInfoUrl="http://pmd.sourceforge.net/rules/controversial.html#UnusedModifier" priority="3">
 Avoid modifiers which are implied by the context
 </violation>
 </file>
 <file name="/Users/norman/Documents/workspace/niosmtp/src/main/java/me/normanmaurer/niosmtp/transport/netty/internal/NettySMTPClientSession.java">
-<violation beginline="138" endline="144" begincolumn="17" endcolumn="55" rule="DataflowAnomalyAnalysis" ruleset="Controversial Rules" package="me.normanmaurer.niosmtp.transport.netty.internal" class="NettySMTPClientSession" method="send" variable="msgIn" externalInfoUrl="http://pmd.sourceforge.net/rules/controversial.html#DataflowAnomalyAnalysis" priority="5">
-Found 'DD'-anomaly for variable 'msgIn' (lines '138'-'144').
+<violation beginline="139" endline="145" begincolumn="17" endcolumn="55" rule="DataflowAnomalyAnalysis" ruleset="Controversial Rules" package="me.normanmaurer.niosmtp.transport.netty.internal" class="NettySMTPClientSession" method="send" variable="msgIn" externalInfoUrl="http://pmd.sourceforge.net/rules/controversial.html#DataflowAnomalyAnalysis" priority="5">
+Found 'DD'-anomaly for variable 'msgIn' (lines '139'-'145').
 </violation>
-<violation beginline="140" endline="144" begincolumn="17" endcolumn="55" rule="DataflowAnomalyAnalysis" ruleset="Controversial Rules" package="me.normanmaurer.niosmtp.transport.netty.internal" class="NettySMTPClientSession" method="send" variable="msgIn" externalInfoUrl="http://pmd.sourceforge.net/rules/controversial.html#DataflowAnomalyAnalysis" priority="5">
-Found 'DD'-anomaly for variable 'msgIn' (lines '140'-'144').
+<violation beginline="141" endline="145" begincolumn="17" endcolumn="55" rule="DataflowAnomalyAnalysis" ruleset="Controversial Rules" package="me.normanmaurer.niosmtp.transport.netty.internal" class="NettySMTPClientSession" method="send" variable="msgIn" externalInfoUrl="http://pmd.sourceforge.net/rules/controversial.html#DataflowAnomalyAnalysis" priority="5">
+Found 'DD'-anomaly for variable 'msgIn' (lines '141'-'145').
 </violation>
-<violation beginline="197" endline="197" begincolumn="13" endcolumn="63" rule="OnlyOneReturn" ruleset="Controversial Rules" package="me.normanmaurer.niosmtp.transport.netty.internal" class="NettySMTPClientSession" method="createDataTerminatingChannelBuffer" externalInfoUrl="http://pmd.sourceforge.net/rules/controversial.html#OnlyOneReturn" priority="3">
+<violation beginline="198" endline="198" begincolumn="13" endcolumn="63" rule="OnlyOneReturn" ruleset="Controversial Rules" package="me.normanmaurer.niosmtp.transport.netty.internal" class="NettySMTPClientSession" method="createDataTerminatingChannelBuffer" externalInfoUrl="http://pmd.sourceforge.net/rules/controversial.html#OnlyOneReturn" priority="3">
 A method should have only one exit point, and that should be the last statement in the method
 </violation>
-<violation beginline="210" endline="229" begincolumn="22" endcolumn="48" rule="DataflowAnomalyAnalysis" ruleset="Controversial Rules" package="me.normanmaurer.niosmtp.transport.netty.internal" class="NettySMTPClientSession" method="createDataTerminatingChannelBuffer" variable="prevLast" externalInfoUrl="http://pmd.sourceforge.net/rules/controversial.html#DataflowAnomalyAnalysis" priority="5">
-Found 'DU'-anomaly for variable 'prevLast' (lines '210'-'229').
+<violation beginline="211" endline="230" begincolumn="22" endcolumn="48" rule="DataflowAnomalyAnalysis" ruleset="Controversial Rules" package="me.normanmaurer.niosmtp.transport.netty.internal" class="NettySMTPClientSession" method="createDataTerminatingChannelBuffer" variable="prevLast" externalInfoUrl="http://pmd.sourceforge.net/rules/controversial.html#DataflowAnomalyAnalysis" priority="5">
+Found 'DU'-anomaly for variable 'prevLast' (lines '211'-'230').
 </violation>
-<violation beginline="235" endline="237" begincolumn="16" endcolumn="9" rule="CallSuperInConstructor" ruleset="Controversial Rules" package="me.normanmaurer.niosmtp.transport.netty.internal" class="NettySMTPClientSession$CallbackAdapter" externalInfoUrl="http://pmd.sourceforge.net/rules/controversial.html#CallSuperInConstructor" priority="3">
+<violation beginline="236" endline="238" begincolumn="16" endcolumn="9" rule="CallSuperInConstructor" ruleset="Controversial Rules" package="me.normanmaurer.niosmtp.transport.netty.internal" class="NettySMTPClientSession$CallbackAdapter" externalInfoUrl="http://pmd.sourceforge.net/rules/controversial.html#CallSuperInConstructor" priority="3">
 It is a good practice to call super() in a constructor
 </violation>
-<violation beginline="247" endline="249" begincolumn="25" endcolumn="38" rule="DataflowAnomalyAnalysis" ruleset="Controversial Rules" package="me.normanmaurer.niosmtp.transport.netty.internal" class="NettySMTPClientSession$CallbackAdapter" method="messageReceived" variable="remove" externalInfoUrl="http://pmd.sourceforge.net/rules/controversial.html#DataflowAnomalyAnalysis" priority="5">
-Found 'DD'-anomaly for variable 'remove' (lines '247'-'249').
+<violation beginline="248" endline="250" begincolumn="25" endcolumn="38" rule="DataflowAnomalyAnalysis" ruleset="Controversial Rules" package="me.normanmaurer.niosmtp.transport.netty.internal" class="NettySMTPClientSession$CallbackAdapter" method="messageReceived" variable="remove" externalInfoUrl="http://pmd.sourceforge.net/rules/controversial.html#DataflowAnomalyAnalysis" priority="5">
+Found 'DD'-anomaly for variable 'remove' (lines '248'-'250').
+</violation>
+</file>
+<file name="/Users/norman/Documents/workspace/niosmtp/src/main/java/me/normanmaurer/niosmtp/transport/netty/internal/SMTPPipeliningRequestEncoder.java">
+<violation beginline="52" endline="52" begincolumn="13" endcolumn="81" rule="OnlyOneReturn" ruleset="Controversial Rules" package="me.normanmaurer.niosmtp.transport.netty.internal" class="SMTPPipeliningRequestEncoder" method="encode" externalInfoUrl="http://pmd.sourceforge.net/rules/controversial.html#OnlyOneReturn" priority="3">
+A method should have only one exit point, and that should be the last statement in the method
 </violation>
 </file>
 <file name="/Users/norman/Documents/workspace/niosmtp/src/main/java/me/normanmaurer/niosmtp/transport/netty/internal/SMTPRequestEncoder.java">
