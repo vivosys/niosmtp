@@ -1,6 +1,6 @@
 me.normanmaurer.niosmtp.core
 me.normanmaurer.niosmtp.delivery
-me.normanmaurer.niosmtp.delivery.callback
+me.normanmaurer.niosmtp.delivery.chain
 me.normanmaurer.niosmtp.delivery.impl
 me.normanmaurer.niosmtp
 me.normanmaurer.niosmtp.transport

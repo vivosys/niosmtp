@@ -1,10 +1,8 @@
 -classpath
-'/Users/norman/Documents/workspace/niosmtp/target/classes:/Users/norman/.m2/repository/org/slf4j/slf4j-api/1.6.1/slf4j-api-1.6.1.jar:/Users/norman/.m2/repository/org/jboss/netty/netty/3.2.6.Final/netty-3.2.6.Final.jar:/Users/norman/.m2/repository/commons-codec/commons-codec/1.5/commons-codec-1.5.jar'
+'/Users/norman/Documents/workspace/niosmtp/target/classes:/Users/norman/.m2/repository/org/slf4j/slf4j-api/1.6.3/slf4j-api-1.6.3.jar:/Users/norman/.m2/repository/org/jboss/netty/netty/3.2.7.Final/netty-3.2.7.Final.jar:/Users/norman/.m2/repository/commons-codec/commons-codec/1.5/commons-codec-1.5.jar'
 -encoding
 'MacRoman'
 -protected
--source
-'1.6'
 -sourcepath
 '/Users/norman/Documents/workspace/niosmtp/src/main/java'
 -author
@@ -18,15 +16,8 @@
 'UTF-8'
 -doctitle
 'niosmtp 0.1-SNAPSHOT API'
--link
-'http://java.sun.com/javase/6/docs/api'
--linksource
--tag
-"note:a:NOTE"
--tag
-"todo:a:TODO"
--tag
-"warning:a:WARNING"
+-linkoffline
+'http://download.oracle.com/javase/6/docs/api' '/Users/norman/Documents/workspace/niosmtp/target/javadoc-bundle-options'
 -use
 -version
 -windowtitle
