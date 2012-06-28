@@ -19,6 +19,8 @@ package me.normanmaurer.niosmtp.delivery.chain;
 import me.normanmaurer.niosmtp.SMTPException;
 import me.normanmaurer.niosmtp.SMTPResponse;
 import me.normanmaurer.niosmtp.core.SMTPRequestImpl;
+import me.normanmaurer.niosmtp.delivery.Authentication;
+import me.normanmaurer.niosmtp.delivery.SMTPDeliveryAgentConfig;
 import me.normanmaurer.niosmtp.delivery.SMTPDeliveryEnvelope;
 import me.normanmaurer.niosmtp.transport.SMTPClientConstants;
 import me.normanmaurer.niosmtp.transport.SMTPClientSession;
@@ -53,7 +55,23 @@ public class HeloResponseListener extends ChainedSMTPClientFutureListener<SMTPRe
         String mail = ((SMTPDeliveryEnvelope)session.getAttribute(CURRENT_SMTP_TRANSACTION_KEY)).getSender();
 
         if (code < 400) {
-            next(session, SMTPRequestImpl.mail(mail));
+
+            Authentication auth = ((SMTPDeliveryAgentConfig)session.getConfig()).getAuthentication();
+            if (auth == null) {
+                next(session, SMTPRequestImpl.mail(mail));
+            } else {
+                switch (auth.getMode()) {
+                case Plain:
+                    next(session, SMTPRequestImpl.authPlain());
+
+                    break;
+                case Login:
+                    next(session, SMTPRequestImpl.authLogin());
+                default:
+                    break;
+                }
+            }
+
         } else {
             setDeliveryStatusForAll(session, response);
 
